@@ -1,0 +1,775 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"blocks",
+				"blocks"
+			],
+			[
+				"block",
+				"block"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"lis",
+				"list-style"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"geeklist",
+				"geeklistUser"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"google",
+				"avia_google_maps"
+			],
+			[
+				"to",
+				"to	text-outline"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"pre",
+				"pre	Tag"
+			],
+			[
+				"php",
+				"php"
+			],
+			[
+				"bac",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ReadMe.txt",
+			"settings":
+			{
+				"buffer_size": 969,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 436.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"prefs",
+				"Preferences: SublimeLint Settings – User"
+			],
+			[
+				"lin",
+				"SublimeLint: Next Error"
+			],
+			[
+				"lint",
+				"Coffee: Lint"
+			],
+			[
+				"subl",
+				"Preferences: SublimeLint Settings – User"
+			],
+			[
+				"sub",
+				"Preferences: SublimeLint Settings – User"
+			],
+			[
+				"",
+				"SublimeLint: Show All Errors"
+			],
+			[
+				"func",
+				"Snippet: Function"
+			],
+			[
+				"synt",
+				"SyntaxHighlightTools: New tmLang File…"
+			],
+			[
+				"INS",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 504.0
+	},
+	"console":
+	{
+		"height": 176.0,
+		"history":
+		[
+			"\\--help",
+			"-V",
+			"-v",
+			"v",
+			"mkdir",
+			"mk",
+			"man",
+			"commands",
+			"help",
+			"/?",
+			"run",
+			"cd..",
+			"c:/",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/rsmt-local-business-schema/index.php",
+		"/C/Users/brain/Dropbox/Webfiles/wordpress themes/Avada/functions.php",
+		"/C/Users/brain/Desktop/functions.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/header 4.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/functions.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/wp-config 2.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/footer.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/ubermenu.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/changelog.txt",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/debug 2.log",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/style.css",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/header 5.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/wp-config.php",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/wp-visual-icon-fonts/wp-visual-icon-fonts/wpvi-options.php",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/wp-visual-icon-fonts/wp-visual-icon-fonts/wp_visual_icon_fonts.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/debug.log",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/wp-visual-icon-fonts/wp-visual-icon-fonts/css/wpvi-admin-style.css",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/wp-visual-icon-fonts/wp-visual-icon-fonts/css/wpvi-options.css",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/rsmt-local-business-schema/rsmt_info.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/rsmt-local-business-schema/options.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/ReadMe.txt",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/reviews_class.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/index.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/rsmt_css.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/options.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/reviews.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/mdp_info.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/mdp_css.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/single.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/header 3.php",
+		"/C/Users/brain/Dropbox/Webfiles/myplugs/mdp-local-business-seo/mdp_contact.php",
+		"/C/Users/brain/Dropbox/me/src/documents/blog.html.coffee",
+		"/C/Users/brain/Dropbox/me/docpad.coffee",
+		"/C/Users/brain/Dropbox/me/src/layouts/default.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/documents/styles/style.css.styl",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/robots.txt",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/.htaccess 2",
+		"/C/Users/brain/Dropbox/me/src/partials/content/tagmanager.html.coffee",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/error_log",
+		"/C/Users/brain/Dropbox/me/src/documents/styles/social.css.styl",
+		"/C/Users/brain/Dropbox/me/src/partials/js/tagmanager.js.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/coderbyte.html.haml",
+		"/C/Users/brain/Dropbox/me/package.json",
+		"/C/Users/brain/Dropbox/me/npm-debug.log",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/post-types.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/template-testimonials.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/content-testimonials.php",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/header.php",
+		"/C/Users/brain/Dropbox/Webfiles/.htaccess",
+		"/C/Users/brain/AppData/Local/Temp/fz3temp-1/testimonials-list.php",
+		"/C/Users/brain/Downloads/UCanAccess-2.0.3-bin/UCanAccess-2.0.3-bin/LICENSE.txt",
+		"/C/Users/brain/Downloads/schemacrawler-10.08.02-examples/schemacrawler-10.08.02-examples/schemacrawler-plugin/schemacrawler-plugin-readme.html",
+		"/C/Users/brain/Downloads/UCanAccess-2.0.3-bin/UCanAccess-2.0.3-bin/version.txt",
+		"/C/Users/brain/Downloads/schemaSpyGUI20090302/README.TXT",
+		"/C/Users/brain/Dropbox/me/src/files/vendor/js/whiteboard.js",
+		"/C/Users/brain/Desktop/su20076000_00000000",
+		"/C/Users/brain/Desktop/gallery/gallery/custom_functions.php",
+		"/C/Users/brain/Downloads/cse/cse/INSTALL.txt",
+		"/C/Users/brain/Downloads/cse/cse/cseversion.txt",
+		"/C/Users/brain/Downloads/cse/cse/CHANGELOG.txt",
+		"/C/Users/brain/Downloads/cse/cse/cse.conf",
+		"/C/Users/brain/Downloads/cloudflare-CloudFlare-CPanel-200d434/cloudflare/README",
+		"/C/Users/brain/Downloads/NicoleData_2014-Mar-07_0851/NicoleData_2014-Mar-07_0851.csv",
+		"/C/Windows/System32/drivers/etc/HOSTS",
+		"/C/Users/brain/Dropbox/Webfiles/Tidbits/snippets.html",
+		"/C/Users/brain/Desktop/smart.html",
+		"/C/Users/brain/Dropbox/me/.env",
+		"/C/Users/brain/Dropbox/me/node_modules/docpad-plugin-services/out/services.plugin.js",
+		"/C/Users/brain/Dropbox/me/out/styles/style.css",
+		"/C/Users/brain/Dropbox/me/src/documents/styles/whiteboard.css.styl",
+		"/C/Users/brain/Dropbox/me/src/partials/blocks/var.html.jade",
+		"/C/Users/brain/Dropbox/me/src/partials/blocks/variable-more.html.jade",
+		"/C/Users/brain/Dropbox/me/src/partials/social/twitter.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/blocks/variable.html.jade",
+		"/C/Users/brain/Dropbox/me/src/partials/blocks/input-string-to-list.html.jade",
+		"/C/Users/brain/Dropbox/me/src/partials/blocks/post-procedure.html.jade",
+		"/C/Users/brain/Dropbox/me/src/partials/blocks/submit-request.html.jade",
+		"/C/Users/brain/Dropbox/me/src/documents/pages/app-inventor.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/euler.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/layouts/blank.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/codepen.html.coffee",
+		"/C/Users/brain/Documents/NetBeansProjects/Cheat Sheets/class-diagrams.html",
+		"/C/eclipse/plugins/com.google.gdt.eclipse.designer.hosted.2_2_3.1.2.r36x201307151442/plugin.xml",
+		"/C/eclipse/features/com.google.gdt.eclipse.designer.feature_3.1.2.r36x201307151456/feature.xml",
+		"/C/Users/brain/Dropbox/me/src/documents/blog/cane-corso-blunted-sultan.html.jade",
+		"/C/Users/brain/Desktop/temp.jade",
+		"/C/Users/brain/Desktop/temp.styl",
+		"/C/Users/brain/Dropbox/me/gviz-api.js",
+		"/C/BitNami/wampstack/apps/wordpress/htdocs/wp-config.php",
+		"/C/Users/brain/Desktop/themeforest-5871901-x-the-ultimate-wordpress-theme/edmunds-item/index.php",
+		"/C/Users/brain/Desktop/edmunds-item/index.php",
+		"/C/Users/brain/Dropbox/me/src/partials/social/facebook.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/flickr.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/geeklist.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/gittip.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/linkedin.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/tumblr.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/youtube.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/vimeo.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/codeivate.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/social/github.html.coffee",
+		"/C/Users/brain/Dropbox/me/src/partials/pens/whiteboard.html.jade",
+		"/C/Users/brain/Downloads/Crime Statistics (20 Feb 2014 0548) (1).xls",
+		"/C/Users/brain/Desktop/DataTables-1.9.4/Readme.txt",
+		"/C/Users/brain/Dropbox/me/src/documents/blog/google-apps-scripting.html.jade",
+		"/C/Users/brain/Dropbox/me/src/partials/content/disqus.html.jade",
+		"/C/Users/brain/Dropbox/me/out/vendor/js/whiteboard.js",
+		"/C/Users/brain/Dropbox/me/src/files/vendor/js/soundcloud-player-api.js",
+		"/C/Users/brain/Desktop/State.js",
+		"/C/Users/brain/Dropbox/me/src/documents/index.html.eco",
+		"/C/Users/brain/Dropbox/me/grunt-config.json",
+		"/C/Users/brain/Dropbox/me/grunt.js",
+		"/C/Users/brain/Dropbox/me/src/documents/pages/charts.html.coffee",
+		"/C/Users/brain/AppData/Roaming/Sublime Text 3/Packages/Tag/Tag Package.sublime-settings",
+		"/C/Users/brain/Dropbox/me/src/documents/scripts/script.js.coffee",
+		"/C/Users/brain/Dropbox/me/src/documents/scripts/soundcloud-player-api.js",
+		"/C/Users/brain/Dropbox/me/src/files/vendor/jquery.js",
+		"/C/Users/brain/Dropbox/me/src/files/vendor/fancybox/jquery.fancybox.js",
+		"/C/Users/brain/Dropbox/me/src/files/vendor/fancybox/jquery.fancybox.pack.js",
+		"/C/Users/brain/Dropbox/me/src/documents/styles/responsive.css.styl",
+		"/C/Users/brain/Dropbox/me/src/files/js/bootstrap.js",
+		"/C/Users/brain/Dropbox/me/src/files/js/bootstrap.min.js",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/w3-total-cache/w3-total-cache/inc/options/dashboard.php",
+		"/C/Users/brain/Dropbox/.htaccess",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/w3-total-cache/w3-total-cache/inc/options/general.php",
+		"/C/Users/brain/Dropbox/Repair_Shop_Marketing/Angels passwords.docx",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/w3-total-cache/w3-total-cache/inc/options/install.php",
+		"/C/Users/brain/Dropbox/Webfiles/wp plugs/w3-total-cache/w3-total-cache/inc/options/referrer.php"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 129.0,
+		"where_history":
+		[
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\myplugs\\rsmt-local-business-schema",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\myplugs\\mdp-local-business-seo",
+			"",
+			"C:\\Users\\brain\\AndroidStudioProjects\\slideshow-master",
+			"C:\\Users\\brain\\Dropbox\\me\\src\\partials\\blocks",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\wordpress themes\\Avada",
+			"C:\\Users\\brain\\Dropbox\\me\\src\\partials\\social",
+			"C:\\Users\\brain\\Dropbox\\me\\src",
+			"C:\\Users\\brain\\Dropbox\\me\\src\\partials\\social",
+			"C:\\Users\\brain\\Dropbox\\Webfiles",
+			"",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\wordpress themes\\enfold",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\wp plugs\\edmunds-item",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\wp plugs\\ubermenu",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\wp plugs\\edmunds-item",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\wordpress themes\\Avada\\Avada",
+			"C:\\Users\\brain\\Desktop\\Samstrap",
+			"C:\\Users\\brain\\Dropbox\\Webfiles\\wordpress themes\\enfold",
+			"",
+			"C:\\Users\\brain\\Dropbox\\cloud\\src\\partials",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"plugins",
+			"public ",
+			"RSMT_Local_Business_Schema_ID",
+			"RSMT_Local_Business_Schema_Id",
+			"RSMT_Local_Business_Schema_ID",
+			"RSMT_Local_Business_Schema_Nick",
+			"options",
+			"rsmt_icon32",
+			".png",
+			"mdp_",
+			"mdpInfo",
+			"mdp_local_business_info",
+			"MDP_LOCAL_BUSINESS_SEO",
+			"Dubeau",
+			"org",
+			"itempr",
+			"hasPOS",
+			"mdp_latitude",
+			"mdp_longitude",
+			"mdp_latitude",
+			"mdp_longitude",
+			"mdp_latitude",
+			"mdp_fax_number",
+			"mdp_telephone",
+			"mdp_address_country",
+			"mdp_postal_code",
+			"mdp_address_region",
+			"mdp_address_locality",
+			"mdp_street_address",
+			"mdp_fax_number",
+			"mdp_telephone",
+			"mdp_address_country",
+			"mdp_postal_code",
+			"org",
+			"microdataprojec",
+			"mdp_fax_number",
+			"mdp_telephone",
+			"mdp_fax_number",
+			"mdp_telephone",
+			"mdp_geo_location",
+			"mdp_address_country",
+			"mdp_postal_code",
+			"mdp_address_region",
+			"mdp_address_locality",
+			"contact",
+			"mdp_contact",
+			"contact",
+			"mdp-contact",
+			"<q>",
+			"<div class=\"review",
+			"class=\"review",
+			"fa ",
+			"fa",
+			"nav",
+			"=",
+			"width",
+			"breadcrumb",
+			"//coderbyte",
+			"coderbyte",
+			"Coderbyte",
+			"coderbyte",
+			"Coderbyte",
+			"coderbyte",
+			"article",
+			"entry",
+			"fn",
+			" :",
+			" => ",
+			"{:",
+			"}",
+			"        </h5>",
+			"<h5>",
+			"mtm mbn unit ",
+			"str8",
+			"line",
+			"mg score",
+			"mrm",
+			"unit size1of3 mvm pbs",
+			"var ga",
+			"trackPageView",
+			"trackPage",
+			"track",
+			"social",
+			"''",
+			";",
+			" {",
+			"}",
+			"{",
+			"}",
+			"    }\n  }\n}",
+			"input",
+			"<input",
+			"/>",
+			"label",
+			"</label>",
+			"elsewhat.android.dreaming",
+			"/* line",
+			";",
+			"}",
+			"<div class=\"",
+			"}",
+			"{",
+			"-moz-",
+			";",
+			"bg",
+			"sun",
+			"light",
+			"dark",
+			"background-",
+			"background-color",
+			"transform",
+			"  tr",
+			"  ",
+			"    ",
+			"   ",
+			"  ",
+			":",
+			") ",
+			"\n\n",
+			"}",
+			" {",
+			";",
+			"  }\n}",
+			"meth",
+			"chemis",
+			"dpi",
+			"    ",
+			"'"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"rsmt_icon",
+			"rsmt_",
+			"rsmtschema",
+			"rsmt_local_business_schema",
+			"RSMT_Local_Business_Schema",
+			"samiam.brittney.dreaming",
+			".",
+			"$sun",
+			"$light",
+			"$dark",
+			" tr",
+			")",
+			"",
+			"RSMT",
+			"rsmt",
+			"RSMT",
+			"-",
+			"!==",
+			"===",
+			"	",
+			"fa-2x pull-right",
+			"fa",
+			"//",
+			"//garysautoonline.com",
+			"//garysautoonline",
+			"//",
+			"//garysautoonline",
+			"garysautoonline.com",
+			"",
+			"samstrap",
+			"$samstrap",
+			" ",
+			"",
+			"span.",
+			"",
+			".",
+			"",
+			".",
+			"span.",
+			"",
+			".",
+			"100% { top: -100%",
+			"portalAdmin",
+			"portal",
+			"timeportal",
+			"time_portal",
+			"Portal",
+			"Portal_Admin",
+			"2014 5am1am",
+			"Samuel Nord <mrsonord@gmail.com>",
+			"Our unsurpassed warranty is not transferable, and is available for 3 years/36,000 miles to the owner of the car at the time of the repair.",
+			"<a href=\"tel:13178262906\">317-826-2906<a/>",
+			"asgindy.com",
+			"Indianapolis",
+			"Automotive Service Group",
+			"Indianapolis",
+			"<a href=\"tel:13178262906\">317-826-2906<a/>",
+			"Indiana",
+			"",
+			"Automotive Service Group",
+			".",
+			"",
+			"Call <a href=\"tel:13178262906\">317-826-2906<a/>",
+			"317-826-2906",
+			"asgindy.com",
+			"",
+			"'",
+			"",
+			"&",
+			"",
+			"!!! 5",
+			"---\ncacheable: true\nstandalone: true\n---\n\n!!! 5",
+			"---\ncacheable: true\n---\n\n!!! 5",
+			".re",
+			"fa fa-li fa-fw fa-lg fa-",
+			"<ul class=\"fa-ul fa-fw fa-lg\">",
+			"</a></li>",
+			"</i><a href=\"#\">",
+			"<li><i class=\"fa fa-li fa-\"></i>",
+			"<ul class=\"fa-ul\">"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ReadMe.txt",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"is_xml": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.coffeecompile_output":
+	{
+		"height": 402.0
+	},
+	"output.exec":
+	{
+		"height": 201.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 118.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"project": "schemaplug.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"selected_items":
+		[
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 242.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

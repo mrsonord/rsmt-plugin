@@ -1,10 +1,18 @@
-=== RSMT Plugin ===
-Adds schema microdata to a site
+=== RSMT Local Business Schema ===
+Author: Samuel Nord
+Tags: microdata, seo, local business, schema.org, schema, rich snippets
+Requires at least: 3.0
+Tested up to: 3.8.1
+Stable tag: 0.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Local Business Schema plugin adds schema microdata to a site
 
 
 == Description ==
 
-An easy way to add slocal business chema markup.
+An easy way to add schema markup.
 
 Employees and Founders can be added to the microdata by group. Users name, profile url, email, and description are used. This will help with simple searches like "Bakery Chicago Mike", where the person might remember the employee but not where they bought the item.
 
@@ -21,7 +29,5 @@ Employees and Founders can be added to the microdata by group. Users name, profi
 
 == Future Mods ==
 
-Customer Review/Testimonial Form Shortcode/Widget
-
-Ability to add services, products and offers.
+Ability to add services, products and offers to the Microdata of your site.
 
