@@ -72,5 +72,8 @@
 	.rsmt {
 		padding: 5px 5px 5px 5px;
 	}
+        .floatright {
+            float: right;
+        }
 
 </style>

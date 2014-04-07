@@ -3,7 +3,7 @@ Author: Samuel Nord
 Tags: microdata, seo, local business, schema.org, schema, rich snippets
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 0.2
+Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,11 @@ Employees and Founders can be added to the microdata by group. Users name, profi
 
 
 == Changelog ==
-
+= Version 0.2.2
+    Bugfix: Options Were Not Saving Properly
+= Version 0.2.1
+    Moved Options To Settings Menu
+    Added Branding to Options Page
 = Version 0.2
     Original Public Release
 

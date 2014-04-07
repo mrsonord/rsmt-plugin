@@ -2,19 +2,18 @@
 include ( 'rsmt_css.php' );
 screen_icon();
 $rsmtOptions = new rsmtschema();
+$rsmtPath = plugin_dir_url( __FILE__ );
 ?>
 <div class="wrap">
-<div class="right_block">
-
-</div>
 <div class="left_block">
-<h2>Local Business SEO</h2>
-
+<h2>Local Business SEO
+<a class="floatright" href="http://repairshopmarketingtools.com" title="Repair Shop Marketing Tools"><img src="<?php echo $rsmtPath ?>rsmt-logo.png" alt="Repair Shop Marketing Tools Logo" width="300" height="100"></a>
+</h2>
 <h3>
-	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo parse_url ( get_bloginfo ( 'url' ) , 1 ); ?>"
-	   target="_blank">Preview your microdata</a></h3>
+	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo parse_url( get_bloginfo( 'url' ), 1 ); ?>" target="_blank">Preview your microdata</a>
+</h3>
 
-<form action="rsmt_options.php" method="post" class="rsmt_form">
+<form action="options.php" method="post" class="rsmt_form">
 <?php settings_fields ( $plugin_id . '_options' ); ?>
 <table class="rsmt_table">
 <tr style="background:#eeeeee;">
@@ -498,7 +497,6 @@ $rsmtOptions = new rsmtschema();
 </table>
 </form>
 <h3>
-	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo parse_url ( get_bloginfo ( 'url' ) , 1 ); ?>"
-	   target="_blank">Preview your microdata</a></h3>
+	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo parse_url( get_bloginfo( 'url' ), 1 ); ?>" target="_blank">Preview your microdata</a></h3>
 </div>
 </div>
