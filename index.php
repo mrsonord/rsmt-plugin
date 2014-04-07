@@ -13,97 +13,24 @@ Author URI: mailto:sam@repairshopmarketingtools.com
 // DEFINE PLUGIN ID
 define( 'RSMT_Local_Business_Schema_ID' , 'rsmt_local_business_schema' );
 // DEFINE PLUGIN NICK
-define( 'RSMT_Local_Business_Schema_N' , 'Local Schema' );
+define( 'RSMT_Local_Business_Schema_Nick' , 'Local Schema' );
 
 
 if ( ! class_exists ( 'rsmtschema' ) ) {
 
-	class rsmtschema
-	{
+	class rsmtschema{
 
 		public $name;
 
-		public function __construct ()
-		{
+		public function __construct (){
 
-			$this->name = 'mdpLocalBusinessInfo';
+			$this->name = 'rsmtLocalBusinessInfo';
 
 			register_activation_hook ( __FILE__ , array ( $this , 'rsmt_activate' ) );
 			register_deactivation_hook ( __FILE__ , array ( $this , 'rsmt_deactivate' ) );
-			register_uninstall_hook ( __FILE__ , array ( $this , 'rsmt_uninstall' ) );
+			//register_uninstall_hook ( __FILE__ , array ( $this , 'rsmt_uninstall' ) );
 
 		}
-
-		/**
-		* function/default
-		 * Usage: Set option defaults
-		 * Arg(0): null
-		 * Return: void
-		*/
-
-		function rsmt_default_options(){
-			return array(
-					'rsmt_status' => '0'
-					'rsmt_type' => 'AutoRepair'
-					'rsmt_name' => ''
-					'rsmt_description' => ''
-					'rsmt_url' => ''
-					'rsmt_image' => ''
-					'rsmt_sameas' => ''
-					'rsmt_payment_accepted' => 'Cash'
-					'rsmt_street_address_one' => ''
-					'rsmt_address_locality_one' => ''
-					'rsmt_address_region_one' => ''
-					'rsmt_postal_code_one' => ''
-					'rsmt_address_country_one' => 'United States'
-					'rsmt_street_address_two' => ''
-					'rsmt_address_locality_two' => ''
-					'rsmt_address_region_two' => ''
-					'rsmt_postal_code_two' => ''
-					'rsmt_address_country_two' => 'United States'
-					'rsmt_email' => ''
-					'rsmt_telephone_one' => ''
-					'rsmt_telephone_two' => ''
-					'rsmt_fax_number_one' => ''
-					'rsmt_fax_number_two' => ''
-					'rsmt_best_rating' => '5'
-					'rsmt_rating_value' => '1'
-					'rsmt_open' => ''
-					'rsmt_close' => ''
-					'rsmt_dow' => 'Mo - Fr'
-					'rsmt_seeks' => ''
-					'rsmt_seeks_url' => ''
-					'rsmt_seeks_name' => ''
-					'rsmt_seeks_description' => ''
-					'rsmt_member' => ''
-					'rsmt_member_url' => ''
-					'rsmt_member_name' => ''
-					'rsmt_member_description' => ''
-					'rsmt_geo_location_one' => '1'
-					'rsmt_longitude_one' => ''
-					'rsmt_latitude_one' => ''
-					'rsmt_geo_location_two' => '1'
-					'rsmt_longitude_two' => ''
-					'rsmt_latitude_two' => ''
-					'rsmt_founder_role' => ''
-					'rsmt_employee_role' => ''
-					'rsmt_review' => ''
-					'rsmt_review_default' => ''
-					'rsmt_keyword' => ''
-					'rsmt_monday' => '1'
-					'rsmt_tuesday' => '1'
-					'rsmt_wednesday' => '1'
-					'rsmt_thursday' => '1'
-					'rsmt_friday' => '1'
-					'rsmt_saturday' => '1' );
-		}
-
-		function rsmt_get_options() {
-
-			return array_merge( get_option( 'rsmt_options', array() ), rsmt_default_options() );
-
-		}
-
 
 		/** function/activate
 		 * Usage: create tables if not exist and activates the plugin
@@ -111,8 +38,7 @@ if ( ! class_exists ( 'rsmtschema' ) ) {
 		 * Return: void
 		 */
 
-		public static function rsmt_activate ()
-		{
+		public static function rsmt_activate(){
 
 			add_option ( 'rsmt_status' );
 			add_option ( 'rsmt_type' );
@@ -177,8 +103,7 @@ if ( ! class_exists ( 'rsmtschema' ) ) {
 		 * Return: void
 		 */
 
-		public static function rsmt_deactivate ()
-		{
+		public static function rsmt_deactivate(){
 
 			unregister_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_status' );
 			unregister_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_type' );
@@ -244,8 +169,7 @@ if ( ! class_exists ( 'rsmtschema' ) ) {
 		 * Return: void
 		 */
 
-		public static function rsmt_uninstall ()
-		{
+		public static function rsmt_uninstall(){
 
 			delete_option ( 'rsmt_status' );
 			delete_option ( 'rsmt_type' );
@@ -322,88 +246,63 @@ if ( ! class_exists ( 'rsmtschema' ) ) {
 		 * Arg(0): null
 		 * Return: void
 		 */
-		public static function rsmt_register ()
-		{
-			global $wpdb;
+		public static function rsmt_register (){
 
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_status' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_type' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_name' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_description' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_url' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_image' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_sameas' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_payment_accepted' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_geo_location_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_longitude_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_latitude_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_geo_location_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_longitude_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_latitude_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_telephone_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_telephone_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_fax_number_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_fax_number_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_street_address_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_address_locality_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_address_region_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_postal_code_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_address_country_one' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_street_address_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_address_locality_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_address_region_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_postal_code_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_address_country_two' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_email' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_best_rating' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_worst_rating' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_rating_count' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_rating_value' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_open' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_close' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_dow' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_seeks' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_seeks_name' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_seeks_url' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_seeks_description' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_member' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_member_name' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_member_url' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_member_description' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_founder_role' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_employee_role' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_reviews' , 'rsmt_review' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_reviews' , 'rsmt_review_default' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_reviews' , 'rsmt_keyword' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_monday' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_tuesday' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_wednesday' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_thursday' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_friday' );
-			register_setting ( 'RSMT_Local_Business_Schema_ID' . '_options' , 'rsmt_saturday' );
-
-
-			$table_name = $wpdb->prefix . "rsmt_";
-
-			$sql = "CREATE TABLE $table_name (
-		                        id mediumint(9) NOT NULL AUTO_INCREMENT,
-		                        author VARCHAR(100) NOT NULL,
-		                        pid VARCHAR(10) NOT NULL,
-		                        review_body TEXT NOT NULL,
-		                        url VARCHAR(255) NOT NULL,
-		                        provider VARCHAR(100) NOT NULL,
-		                        description VARCHAR(160) NOT NULL,
-		                        date_created datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-		                        PRIMARY KEY id (id),
-		                        UNIQUE KEY pid (pid)
-		                        );
-                   		";
-
-			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-
-			dbDelta($sql);
-
-
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_status' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_type' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_name' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_description' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_url' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_image' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_sameas' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_payment_accepted' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_geo_location_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_longitude_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_latitude_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_geo_location_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_longitude_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_latitude_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_telephone_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_telephone_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_fax_number_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_fax_number_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_street_address_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_address_locality_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_address_region_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_postal_code_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_address_country_one' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_street_address_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_address_locality_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_address_region_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_postal_code_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_address_country_two' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_email' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_best_rating' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_worst_rating' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_rating_count' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_rating_value' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_open' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_close' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_dow' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_seeks' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_seeks_name' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_seeks_url' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_seeks_description' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_member' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_member_name' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_member_url' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_member_description' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_founder_role' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_employee_role' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_reviews' , 'rsmt_review' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_reviews' , 'rsmt_review_default' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_reviews' , 'rsmt_keyword' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_monday' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_tuesday' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_wednesday' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_thursday' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_friday' );
+			register_setting ( RSMT_Local_Business_Schema_ID . '_options' , 'rsmt_saturday' );
 		}
 
 		/** function/method
@@ -411,13 +310,8 @@ if ( ! class_exists ( 'rsmtschema' ) ) {
 		 * Arg(0): null
 		 * Return: void
 		 */
-		static function rsmt_menu ()
-		{
-
-			$icon_url = str_replace ( basename ( __FILE__ ) , "" , plugin_basename ( __FILE__ ) );
-			//add__page ( 'RSMT Schema' . ' Plugin Options' , 'RSMT Schema' , '' , RSMT_Local_Business_Schema_ID . '_options' , array ( 'rsmtschema' , 'rsmt_options_page' ) , plugins_url ( $icon_url . 'rsmt_icon.png' ) );
-			add_options_page( 'RSMT Schema', 'RSMT Schema', 'manage_options', 'options.php');
-			//add_submenu_page(RSMT_Local_Business_Schema_ID . '_options', RSMT_Local_Business_Schema_NICK . ' Reviews', 'Reviews', '10', RSMT_Local_Business_Schema_ID . '_reviews', array('rsmtschema', 'rsmt_reviews_page'));
+		public static function rsmt_menu (){
+			add_options_page( 'RSMT Schema', ' RSMT Options', 'manage_options', 'rsmt_options', array('rsmtschema', 'rsmt_options_page') );
 		}
 
 		/** function/options_page
@@ -425,94 +319,20 @@ if ( ! class_exists ( 'rsmtschema' ) ) {
 		 * Arg(0): null
 		 * Return: void
 		 */
-		static function rsmt_options_page ()
-		{
+		public static function rsmt_options_page(){
 
 			$plugin_id = RSMT_Local_Business_Schema_ID;
 			// display options page
-			include ( self::rsmt_file_path ( 'options.php' ) );
-
+			include ( self::rsmt_file_path ( 'rsmt_options.php' ) );
 		}
 
-		/** function/reviews_page
-		 * Usage: show options/settings for plugin
-		 * Arg(0): null
-		 * Return: void
-
-		public static function rsmt_reviews_page (){
-			$plugin_id = RSMT_Local_Business_Schema_ID;
-			// display options page
-			include ( self::rsmt_file_path ( 'reviews.php' ) );
-		}
-*/
-/*
-		public static function genReveiws()
-		{
-			require_once('reviews_class.php');
-			$reviews = new Reviews();
-			global $wpdb;
-			$table_name = $wpdb->prefix . "rsmt_reviews";
-			$args = array ('post_status'      => 'publish');
-
-			$posts = get_posts( $args );
-			$pages = get_pages( $args );
-			$array = array_merge($posts, $pages);
-			foreach( $array as $val ){
-
-				$data = explode('::', $reviews->buildReview());
-
-				$wpdb->replace(
-					$table_name,
-					array(
-					     'pid' => $val->ID,
-					     'author' => $data[0],
-					     'review_body' => $data[1],
-					     'provider' => $data[2],
-					     'url' => $data[3],
-					     'description' => $data[4],
-					     'date_created' => current_time('mysql', 1)
-
-					)
-				);
-			}
-
-
-		}
-
-
-		public static function genReveiw($pid)
-		{
-			require_once('reviews_class.php');
-			$reviews = new Reviews();
-			global $wpdb;
-			$table_name = $wpdb->prefix . "rsmt_reviews";
-			$data = explode('::', $reviews->buildReview());
-
-			$wpdb->insert(
-				$table_name,
-				array(
-				     'pid' => $pid,
-				     'author' => $data[0],
-				     'review_body' => $data[1],
-				     'provider' => $data[2],
-				     'url' => $data[3],
-				     'description' => $data[4],
-				     'date_created' => current_time('mysql', 1)
-
-				)
-			);
-
-		}
-*/
 
 		/** function/separateCapital
 		 * Usage: separate string by capital letters with spaces
 		 * Arg(0): null
 		 * Return: parsed string
 		 */
-		public static function separateCapital ($str)
-		{
-
+		public static function separateCapital ($str){
 			preg_match_all ( '/[A-Z][^A-Z]*/' , $str , $results );
 			$result  = "";
 			$results = $results[ 0 ];
@@ -522,8 +342,6 @@ if ( ! class_exists ( 'rsmtschema' ) ) {
 
 			return rtrim ( $result , ' ' );
 		}
-
-
 	}
 }
 
@@ -533,11 +351,6 @@ add_action ( 'user_admin_menu' , array ( 'rsmtschema' , 'rsmt_menu' ) );
 
 
 if ( get_option ( 'rsmt_status' ) == 1 ) {
-
 	include ( 'rsmt_info.php' );
-
-
 }
 $rsmtschema = new rsmtschema();
-
-?>

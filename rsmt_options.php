@@ -1,7 +1,7 @@
 <?php
 include ( 'rsmt_css.php' );
-screen_icon ();
-$mdpOptions = new rsmtschema();
+screen_icon();
+$rsmtOptions = new rsmtschema();
 ?>
 <div class="wrap">
 <div class="right_block">
@@ -14,7 +14,7 @@ $mdpOptions = new rsmtschema();
 	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo parse_url ( get_bloginfo ( 'url' ) , 1 ); ?>"
 	   target="_blank">Preview your microdata</a></h3>
 
-<form action="options.php" method="post" class="rsmt_form">
+<form action="rsmt_options.php" method="post" class="rsmt_form">
 <?php settings_fields ( $plugin_id . '_options' ); ?>
 <table class="rsmt_table">
 <tr style="background:#eeeeee;">
@@ -42,7 +42,7 @@ $mdpOptions = new rsmtschema();
 	<td><select name="rsmt_type">
 			<?php if ( get_option ( 'rsmt_type' ) !== '' ) { ?>
 				<option
-					value="<?php echo get_option ( 'rsmt_type' ); ?>"><?php echo $mdpOptions->separateCapital ( get_option ( 'rsmt_type' ) ); ?></option>
+					value="<?php echo get_option ( 'rsmt_type' ); ?>"><?php echo $rsmtOptions->separateCapital ( get_option ( 'rsmt_type' ) ); ?></option>
 				<option value="">No Type</option>
 			<?php
 			} else {

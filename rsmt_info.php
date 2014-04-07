@@ -11,8 +11,7 @@ if (!class_exists('LocalBusiness')) {
 
 		public $name;
 
-		public function __construct()
-		{
+		public function __construct(){
 
 			$this->name = 'rsmtLocalBusiness';
 
