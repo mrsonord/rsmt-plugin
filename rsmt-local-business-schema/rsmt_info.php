@@ -22,7 +22,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: if found return parent type of business
 		 */
-		public function getParent()
+		public static function getParent()
 		{
 
 			$parent = get_option('rsmt_type');
@@ -164,7 +164,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: void
 		 */
-		public function showLocalBusiness()
+		public static function showLocalBusiness()
 		{
 
 			$rsmt_info = '<!--begin rsmt schema plugin -->';
@@ -213,7 +213,9 @@ if (!class_exists('LocalBusiness')) {
 			if (get_option('rsmt_sameas')) {
 				$rsmt_info .= '<meta itemprop="sameAs" content="' . get_option('rsmt_sameas') . '" />';
 			}
-
+                        /* rating of business*/
+			$rsmt_info .= self::aggregateRating();
+                        
 			$rsmt_info .= '<span itemprop="hasPOS location" itemscope itemtype="http://schema.org/Place">';
 			/* physical address */
 			$rsmt_info .= self::PostalAddressOne();
@@ -222,18 +224,16 @@ if (!class_exists('LocalBusiness')) {
 			}
 
 			$rsmt_info .= '</span>';
-			/* rating of business*/
-			$rsmt_info .= self::aggregateRating();
-
-
-
-			$rsmt_info .= '<span itemprop="hasPOS location" itemscope itemtype="http://schema.org/Place">';
-			$rsmt_info .= self::PostalAddressTwo();
-			/* geo location */
-			if (get_option('rsmt_geo_location_two')) {
+			
+			if (get_option('rsmt_street_address_two')){
+                            $rsmt_info .= '<span itemprop="hasPOS location" itemscope itemtype="http://schema.org/Place">';
+                            $rsmt_info .= self::PostalAddressTwo();
+                            /* geo location */
+                            if (get_option('rsmt_geo_location_two')) {
 				$rsmt_info .= self::geoLocationTwo();
-			}
+                            }
 						$rsmt_info .= '</span>';
+                        }
 			/* type of payments visa, master card, check, cash */
 			if (get_option('rsmt_payment_accepted')) {
 				$rsmt_info .= '<meta itemprop="paymentAccepted" content="' . get_option('rsmt_payment_accepted') . '" />';
@@ -289,7 +289,7 @@ if (!class_exists('LocalBusiness')) {
 
 			$rsmt_info .= '</span>';
 
-			$rsmt_info .= '<!--end microdata project plugin-->';
+			$rsmt_info .= '<!--end RSMT Schema plugin-->';
 
 
 			echo str_replace(array("\r","\n"),"", str_replace(" ", " ", $rsmt_info));
@@ -301,8 +301,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: postal address schema
 		 */
-				private function PostalAddressOne()
-		{
+		private static function PostalAddressOne(){
 
 			$error = 0;
 			$rsmt_info = "";
@@ -361,8 +360,7 @@ if (!class_exists('LocalBusiness')) {
 			}
 
 		}
-		private function PostalAddressTwo()
-		{
+		private static function PostalAddressTwo(){
 
 			$error = 0;
 			$rsmt_info = "";
@@ -428,8 +426,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: aggregate rating schema
 		 */
-		private function aggregateRating()
-		{
+		private static function aggregateRating(){
 
 			$error = 0;
 			$rsmt_info = "";
@@ -476,8 +473,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: seeks schema
 		 */
-		private function seeks()
-		{
+		private static function seeks(){
 
 			$rsmt_info = "";
 
@@ -509,8 +505,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: member schema
 		 */
-		private function member()
-		{
+		private static function member(){
 
 			$rsmt_info = "";
 
@@ -546,8 +541,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: geo location schema
 		 */
-		private function geoLocationOne()
-		{
+		private static function geoLocationOne() {
 
 			if ((!get_option('rsmt_latitude_one')) || (!get_option('rsmt_longitude_one'))
 				|| (preg_match
@@ -574,7 +568,7 @@ if (!class_exists('LocalBusiness')) {
 			return $rsmt_info;
 
 		}
-			private function geoLocationTwo(){
+		private static function geoLocationTwo() {
 
 			if ((!get_option('rsmt_latitude_two')) || (!get_option('rsmt_longitude_two'))
 				|| (preg_match
@@ -606,8 +600,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: employees schema
 		 */
-		private function getEmployee()
-		{
+		private static function getEmployee() {
 
 			$rsmt_info = "";
 
@@ -654,8 +647,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: founders schema
 		 */
-		private function getFounder()
-		{
+		private static function getFounder() {
 
 			$rsmt_info = "";
 
@@ -697,7 +689,7 @@ if (!class_exists('LocalBusiness')) {
 
 		}
 
-		public function getReviews()
+		public static function getReviews()
 		{
 
 			global $wpdb;
@@ -776,15 +768,14 @@ if (!class_exists('LocalBusiness')) {
 		}
 
 
-		public function visuallyHidden()
-		{
+		public static function visuallyHidden() {
 
 			$style = '<style> .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }</style>';
 
 			return print($style);
 		}
 
-		public function getGeoLocationOne(){
+		public static function getGeoLocationOne(){
 			$address = get_option('rsmt_street_address_one') . ',
 			' . get_option('rsmt_address_locality_one') . ', ' . get_option('rsmt_address_region_one') . ' ' . get_option('rsmt_postal_code_one');
 
@@ -801,7 +792,7 @@ if (!class_exists('LocalBusiness')) {
 
 		}
 
-				public function getGeoLocationTwo(){
+		public static function getGeoLocationTwo(){
 			$address = get_option('rsmt_street_address_two') . ',
 			' . get_option('rsmt_address_locality_two') . ', ' . get_option('rsmt_address_region_two') . ' ' . get_option('rsmt_postal_code_two');
 
@@ -817,8 +808,6 @@ if (!class_exists('LocalBusiness')) {
 			update_option('rsmt_longitude_two' , $lng);
 
 		}
-
-
 	}
 }
 
@@ -826,5 +815,3 @@ add_filter('wp_head' , array('LocalBusiness' , 'visuallyHidden'));
 add_filter('wp_footer' , array('LocalBusiness' , 'showLocalBusiness'));
 
 $LocalBusiness = new LocalBusiness();
-
-?>
