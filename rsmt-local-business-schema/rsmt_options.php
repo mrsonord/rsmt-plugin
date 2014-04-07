@@ -10,7 +10,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 <a class="floatright" href="http://repairshopmarketingtools.com" title="Repair Shop Marketing Tools"><img src="<?php echo $rsmtPath ?>rsmt-logo.png" alt="Repair Shop Marketing Tools Logo" width="300" height="100"></a>
 </h2>
 <h3>
-	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo parse_url( get_bloginfo( 'url' ), 1 ); ?>" target="_blank">Preview your microdata</a>
+	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo trailingslashit( get_bloginfo( 'wpurl' ) ); ?>" target="_blank">Preview your microdata</a>
 </h3>
 
 <form action="options.php" method="post" class="rsmt_form">
@@ -403,7 +403,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 			<?php wp_dropdown_roles (); ?></select></td>
 	<td>Select role to associate with founders.</td>
 </tr>
-
+<!--
 <tr style="background:#eeeeee;">
 	<td colspan="3"><h3>Seeks / Demand</h3></td>
 </tr>
@@ -488,6 +488,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 	           placeholder="Repair Shop Marketing Tools"/></td>
 	<td>Required if using seeks.</td>
 </tr>
+-->
 <tr>
 	<td colspan="3"></td>
 </tr>
@@ -497,6 +498,6 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </table>
 </form>
 <h3>
-	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo parse_url( get_bloginfo( 'url' ), 1 ); ?>" target="_blank">Preview your microdata</a></h3>
+	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo trailingslashit( get_bloginfo( 'wpurl' ) ); ?>" target="_blank">Preview your microdata</a></h3>
 </div>
 </div>
