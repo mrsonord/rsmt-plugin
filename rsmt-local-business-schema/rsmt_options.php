@@ -1,20 +1,70 @@
 <?php
-include ( 'rsmt_css.php' );
+require('rsmt_css.php');
 screen_icon();
-$rsmtOptions = new rsmtschema();
+$rsmtOptions = new RSMTSchema();
 $rsmtPath = plugin_dir_url( __FILE__ );
+/*
+private static function rsmt_create_location_fields(){
+	$locations = get_option('rsmt_locations');
+		for ( i = 0; i < $locations; i++){
+			<? ob_start(); ?>
+				<tr>
+					<td class="left">Street Address:</td>
+					<td><input type="text" value="<?php echo get_option( 'rsmt_street_address_ . $i' ); ?>" name="rsmt_street_address_ . $i"/></td>
+					<td>Required.</td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input type="text" name="rsmt_address_locality_one" value="<?php echo get_option ( 'rsmt_address_locality_one' ); ?>"/></td>
+					<td>Required.</td>
+				</tr>
+				<tr>
+					<td>State:</td>
+					<td><input type="text" name="rsmt_address_region_one" value="<?php echo get_option ( 'rsmt_address_region_one' ); ?>"/></td>
+					<td>Required.</td>
+				</tr>
+				<tr>
+					<td>Zip:</td>
+					<td><input type="text" name="rsmt_postal_code_one" value="<?php echo get_option ( 'rsmt_postal_code_one' ); ?>"/>
+					</td>
+					<td>Can be left empty but not recommended.</td>
+				</tr>
+				<tr>
+					<td>Country:</td>
+					<td><input type="text" name="rsmt_address_country_one" value="<?php echo get_option ( 'rsmt_address_country_one' ); ?>"/></td>
+					<td>Can be left empty but not recommended.</td>
+				</tr>
+				<tr>
+					<td>Telephone:</td>
+					<td><input type="text" name="rsmt_telephone_one" value="<?php echo get_option ( 'rsmt_telephone_one' ); ?>"/></td>
+					<td>Can be left empty but not recommended.</td>
+				</tr>
+				<tr>
+					<td>Fax:</td>
+					<td><input type="text" name="rsmt_fax_number_one" value="<?php echo get_option ( 'rsmt_fax_number_one' ); ?>"/></td>
+					<td>Can be left empty but not recommended.</td>
+				</tr>
+				<tr style="background:#eeeeee;">
+					<td colspan="3"><h3>Geo Location</h3></td>
+				</tr>
+				<tr>
+					<td>Use Geolocation</td>
+					<td colspan="2"><input type="checkbox" name="rsmt_geo_location_one" <?php if ( get_option ( 'rsmt_geo_location_one' ) == 'on' ) { echo 'checked';} ?> /> This will use Googles api to generate your geo location from the address entered above.</td>
+				</tr>
+			<? echo ob_get_clean(); ?>
+		}
+}
+*/
 ?>
 <div class="wrap">
 <div class="left_block">
-<h2>Local Business SEO
-<a class="floatright" href="http://repairshopmarketingtools.com" title="Repair Shop Marketing Tools"><img src="<?php echo $rsmtPath ?>rsmt-logo.png" alt="Repair Shop Marketing Tools Logo" width="300" height="100"></a>
-</h2>
+<h2>Local Business Schema<a class="floatright" href="http://repairshopmarketingtools.com" title="Repair Shop Marketing Tools"><img src="<?php echo $rsmtPath ?>rsmt-logo.png" alt="Repair Shop Marketing Tools Logo" width="300" height="100"></a></h2>
 <h3>
 	<a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo trailingslashit( get_bloginfo( 'wpurl' ) ); ?>" target="_blank">Preview your microdata</a>
 </h3>
 
 <form action="options.php" method="post" class="rsmt_form">
-<?php settings_fields ( $plugin_id . '_options' ); ?>
+<?php settings_fields ($plugin_id . '_options'); ?>
 <table class="rsmt_table">
 <tr style="background:#eeeeee;">
 	<td colspan="3"><h3>Business Information</h3></td>
@@ -23,7 +73,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 	<td class="left">Status:</td>
 	<td><select name="rsmt_status">
 
-			<?php if ( get_option ( 'rsmt_status' ) == '1' ) { ?>
+			<?php if (get_option('rsmt_status' ) == '1') { ?>
 				<option value="1">Enabled</option>
 				<option value="0">Disabled</option>
 			<?php
@@ -39,9 +89,8 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 <tr>
 	<td class="left">Business Type:</td>
 	<td><select name="rsmt_type">
-			<?php if ( get_option ( 'rsmt_type' ) !== '' ) { ?>
-				<option
-					value="<?php echo get_option ( 'rsmt_type' ); ?>"><?php echo $rsmtOptions->separateCapital ( get_option ( 'rsmt_type' ) ); ?></option>
+			<?php if (get_option('rsmt_type' ) !== '' ) { ?>
+				<option value="<?php echo get_option ( 'rsmt_type' ); ?>"><?php echo $rsmtOptions->separateCapital ( get_option ( 'rsmt_type' ) ); ?></option>
 				<option value="">No Type</option>
 			<?php
 			} else {
@@ -180,47 +229,46 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </tr>
 <tr>
 	<td>Business Description:</td>
-	<td><input type="text" name="rsmt_description" value="<?php echo get_option ( 'rsmt_description' ); ?>"
-	           placeholder="Very important, try to be as descriptive as possible."/></td>
+	<td><input type="text" name="rsmt_description" value="<?php echo get_option ( 'rsmt_description' ); ?>" placeholder="Very important, try to be as descriptive as possible."/></td>
 	<td>Keep less than 150 characters, will use site description if left empty.</td>
 </tr>
 <tr>
 	<td>Website Url:</td>
-	<td><input type="text" name="rsmt_url" value="<?php echo get_option ( 'rsmt_url' ); ?>"
-	           placeholder="<?php echo get_bloginfo ( 'url' ); ?>"/></td>
+	<td><input type="text" name="rsmt_url" value="<?php echo get_option ( 'rsmt_url' ); ?>" placeholder="<?php echo get_bloginfo ( 'url' ); ?>"/></td>
 	<td>Will use the website url if left empty.</td>
 </tr>
 <tr>
 	<td>Logo / Image Location:</td>
-	<td><input type="text" name="rsmt_image" value="<?php echo get_option ( 'rsmt_image' ); ?>"
-	           placeholder="<?php echo get_bloginfo ( 'url' ); ?>/images/logo.jpg"/></td>
+	<td><input type="text" name="rsmt_image" value="<?php echo get_option ( 'rsmt_image' ); ?>" placeholder="<?php echo get_bloginfo ( 'url' ); ?>/images/logo.jpg"/></td>
 	<td>Not Required</td>
 </tr>
 <tr>
 	<td>Reference Url:</td>
-	<td><input type="text" name="rsmt_sameas" value="<?php echo get_option ( 'rsmt_sameas' ); ?>"
-	           placeholder="http://wiki.<?php echo parse_url ( get_bloginfo ( 'url' ) , 1 ); ?>"/></td>
+	<td><input type="text" name="rsmt_sameas" value="<?php echo get_option ( 'rsmt_sameas' ); ?>" placeholder="http://wiki.<?php echo parse_url ( get_bloginfo ( 'url' ) , 1 ); ?>"/></td>
 	<td>Not Required</td>
 </tr>
 <tr>
 	<td>Payments Accepted:</td>
-	<td><input type="text" name="rsmt_payment_accepted"
-	           value="<?php echo get_option ( 'rsmt_payment_accepted' ); ?>"
-	           placeholder="Visa, Master Card, Check, Cash"/></td>
+	<td><input type="text" name="rsmt_payment_accepted" value="<?php echo get_option ( 'rsmt_payment_accepted' ); ?>" placeholder="Visa, Master Card, Check, Cash"/></td>
 	<td>Not Required</td>
 </tr>
 <tr>
 	<td>Price Range:</td>
-	<td><input type="text" name="rsmt_price_range" value="<?php echo get_option ( 'rsmt_price_range' ); ?>"
-	           placeholder="for inexpensive $ for expensive $$$$$"/></td>
+	<td><input type="text" name="rsmt_price_range" value="<?php echo get_option ( 'rsmt_price_range' ); ?>" placeholder="for inexpensive $ for expensive $$$$$"/></td>
 	<td>Not Required</td>
 </tr>
 <tr>
 	<td class="left"><h3>Locations</h3></td>
+	<td><input type="number" placeholder="1" value="<?php echo get_option ( 'rsmt_locations' ); ?>" min="1" max="10" step="1" name="rsmt_locations"></td>
+</tr>
+<tr>
+  <td></td>
+  <td>If you need to input more than one address save the number of locations and refresh the page to add more address fields.</td>
 </tr>
 <tr>
 	<td class="left">Street Address:</td>
-	<td><input type="text" value="<?php echo get_option ( 'rsmt_street_address_one' ); ?>" name="rsmt_street_address_one"/></td>
+	<td><input type="text" value="<?php echo get_option( 'rsmt_street_address_one' ); ?>" name="rsmt_street_address_one"/></td>
+	<td>Required.</td>
 </tr>
 <tr>
 	<td>City:</td>
@@ -234,8 +282,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </tr>
 <tr>
 	<td>Zip:</td>
-	<td><input type="text" name="rsmt_postal_code_one" value="<?php echo get_option ( 'rsmt_postal_code_one' ); ?>"/>
-	</td>
+	<td><input type="text" name="rsmt_postal_code_one" value="<?php echo get_option ( 'rsmt_postal_code_one' ); ?>"/></td>
 	<td>Can be left empty but not recommended.</td>
 </tr>
 <tr>
@@ -250,8 +297,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </tr>
 <tr>
 	<td>Fax:</td>
-	<td><input type="text" name="rsmt_fax_number_one" value="<?php echo get_option ( 'rsmt_fax_number_one' ); ?>"/>
-	</td>
+	<td><input type="text" name="rsmt_fax_number_one" value="<?php echo get_option ( 'rsmt_fax_number_one' ); ?>"/></td>
 	<td>Can be left empty but not recommended.</td>
 </tr>
 <tr style="background:#eeeeee;">
@@ -259,8 +305,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </tr>
 <tr>
 	<td>Use Geolocation</td>
-	<td colspan="2"><input type="checkbox"
-	                       name="rsmt_geo_location_one" <?php if ( get_option ( 'rsmt_geo_location_one' ) == 'on' ) {
+	<td colspan="2"><input type="checkbox" name="rsmt_geo_location_one" <?php if ( get_option ( 'rsmt_geo_location_one' ) == 'on' ) {
 			echo 'checked';
 		} ?> /> This will use Googles api to generate your geo location from the address entered above.
 	</td>
@@ -282,8 +327,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </tr>
 <tr>
 	<td>Zip:</td>
-	<td><input type="text" name="rsmt_postal_code_two" value="<?php echo get_option ( 'rsmt_postal_code_two' ); ?>"/>
-	</td>
+	<td><input type="text" name="rsmt_postal_code_two" value="<?php echo get_option ( 'rsmt_postal_code_two' ); ?>"/></td>
 	<td>Can be left empty but not recommended.</td>
 </tr>
 <tr>
@@ -298,8 +342,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </tr>
 <tr>
 	<td>Fax:</td>
-	<td><input type="text" name="rsmt_fax_number_two" value="<?php echo get_option ( 'rsmt_fax_number_two' ); ?>"/>
-	</td>
+	<td><input type="text" name="rsmt_fax_number_two" value="<?php echo get_option ( 'rsmt_fax_number_two' ); ?>"/></td>
 	<td>Can be left empty but not recommended.</td>
 </tr>
 <tr style="background:#eeeeee;">
@@ -321,17 +364,14 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 	<td><input type="text" name="rsmt_email" value="<?php echo get_option ( 'rsmt_email' ); ?>"/></td>
 	<td>Can be left empty but not recommended.</td>
 </tr>
-
 <tr>
 	<td>Open:</td>
-	<td><input type="text" name="rsmt_open" value="<?php echo get_option ( 'rsmt_open' ); ?>"
-	           placeholder="9:00"/></td>
+	<td><input type="text" name="rsmt_open" value="<?php echo get_option ( 'rsmt_open' ); ?>" placeholder="9:00"/></td>
 	<td>Can be left empty but not recommended.</td>
 </tr>
 <tr>
 	<td>Close:</td>
-	<td><input type="text" name="rsmt_close" value="<?php echo get_option ( 'rsmt_close' ); ?>"
-	           placeholder="17:00"/></td>
+	<td><input type="text" name="rsmt_close" value="<?php echo get_option ( 'rsmt_close' ); ?>" placeholder="17:00"/></td>
 	<td>Can be left empty but not recommended.</td>
 </tr>
 <tr>
@@ -352,43 +392,35 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 </tr>
 <tr>
 	<td class="left">Rating Value:</td>
-	<td><input type="text" value="<?php echo get_option ( 'rsmt_rating_value' ); ?>" name="rsmt_rating_value"
-	           placeholder="5"/></td>
+	<td><input type="text" value="<?php echo get_option ( 'rsmt_rating_value' ); ?>" name="rsmt_rating_value" placeholder="5"/></td>
 	<td>From 1 to 5, required if using rating.</td>
 </tr>
 <tr>
 	<td>Best Rating:</td>
-	<td><input type="text" name="rsmt_best_rating" value="<?php echo get_option ( 'rsmt_best_rating' ); ?>"
-	           placeholder="5"/></td>
+	<td><input type="text" name="rsmt_best_rating" value="<?php echo get_option ( 'rsmt_best_rating' ); ?>" placeholder="5"/></td>
 	<td>From 1 to 5, required if using rating.</td>
 </tr>
 <tr>
 	<td>Worst Rating:</td>
-	<td><input type="text" name="rsmt_worst_rating" value="<?php echo get_option ( 'rsmt_worst_rating' ); ?>"
-	           placeholder="5"/></td>
+	<td><input type="text" name="rsmt_worst_rating" value="<?php echo get_option ( 'rsmt_worst_rating' ); ?>" placeholder="5"/></td>
 	<td>From 1 to 5, required if using rating.</td>
 </tr>
 <tr>
 	<td>Rating Count:</td>
-	<td><input type="text" name="rsmt_rating_count" value="<?php echo get_option ( 'rsmt_rating_count' ); ?>"
-	           placeholder="239"/></td>
+	<td><input type="text" name="rsmt_rating_count" value="<?php echo get_option ( 'rsmt_rating_count' ); ?>" placeholder="239"/></td>
 	<td>Required if using rating.</td>
 </tr>
 <tr style="background:#eeeeee;">
 	<td colspan="3"><h3>Employees / Founders</h3></td>
 </tr>
 <tr>
-	<td colspan="3">Both employees and founders can be selected by roles. All the users within those roles
-		will be listed in the microdata. Name, Email, and Description is added from the users profile.
-		If there is no display name the nice name will be used.
-	</td>
+	<td colspan="3">Both employees and founders can be selected by roles. All the users within those roles will be listed in the microdata. Name, Email, and Description is added from the users profile. If there is no display name the nice name will be used.</td>
 </tr>
 <tr>
 	<td class="left">Employee Role:</td>
 	<td><select name="rsmt_employee_role">
 			<?php if ( get_option ( 'rsmt_employee_role' ) ) { ?>
-				<option
-				value="<?php echo get_option ( 'rsmt_employee_role' ); ?>"><?php echo ucwords ( get_option ( 'rsmt_employee_role' ) ); ?></option><?php } ?>
+				<option value="<?php echo get_option ( 'rsmt_employee_role' ); ?>"><?php echo ucwords ( get_option ( 'rsmt_employee_role' ) ); ?></option><?php } ?>
 			<option value="">None</option>
 			<?php wp_dropdown_roles (); ?></select></td>
 	<td>Select role to associate with employees.</td>
@@ -397,13 +429,12 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 	<td class="left">Founder Role:</td>
 	<td><select name="rsmt_founder_role">
 			<?php if ( get_option ( 'rsmt_founder_role' ) ) { ?>
-				<option
-				value="<?php echo get_option ( 'rsmt_founder_role' ); ?>"><?php echo ucwords ( get_option ( 'rsmt_founder_role' ) ); ?></option><?php } ?>
+				<option value="<?php echo get_option ( 'rsmt_founder_role' ); ?>"><?php echo ucwords ( get_option ( 'rsmt_founder_role' ) ); ?></option><?php } ?>
 			<option value="">None</option>
 			<?php wp_dropdown_roles (); ?></select></td>
 	<td>Select role to associate with founders.</td>
 </tr>
-<!--
+<!--/*
 <tr style="background:#eeeeee;">
 	<td colspan="3"><h3>Seeks / Demand</h3></td>
 </tr>
@@ -488,7 +519,7 @@ $rsmtPath = plugin_dir_url( __FILE__ );
 	           placeholder="Repair Shop Marketing Tools"/></td>
 	<td>Required if using seeks.</td>
 </tr>
--->
+*/-->
 <tr>
 	<td colspan="3"></td>
 </tr>

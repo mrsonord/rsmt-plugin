@@ -5,16 +5,10 @@
  */
 
 if (!class_exists('LocalBusiness')) {
-
-	class LocalBusiness
-	{
-
+	class LocalBusiness {
 		public $name;
-
 		public function __construct(){
-
 			$this->name = 'rsmtLocalBusiness';
-
 		}
 
 		/** function/getParent
@@ -22,9 +16,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: if found return parent type of business
 		 */
-		public static function getParent()
-		{
-
+		public static function getParent() {
 			$parent = get_option('rsmt_type');
 			$array = array(
 				'AutoBodyShop:AutomotiveBusiness' ,
@@ -139,24 +131,18 @@ if (!class_exists('LocalBusiness')) {
 			);
 
 			foreach ($array as $var) {
-
 				$val = explode(':' , $var);
-
 				switch ($val[0]) {
-
 					case $parent:
 						$set = $val[1];
 						break;
 				}
-
 			}
-
 			if ($set) {
 				return $set;
 			} else {
 				return false;
 			}
-
 		}
 
 		/** function/localBusiness
@@ -164,25 +150,18 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: void
 		 */
-		public static function showLocalBusiness()
-		{
-
+		public static function showLocalBusiness() {
 			$rsmt_info = '<!--begin rsmt schema plugin -->';
-
-
 			$rsmt_info .= '<span itemscope itemtype="http://schema.org/LocalBusiness">';
-
 			if (self::getParent()) {
 				$rsmt_info .= '<span itemprop="additionalType" itemscope itemtype="http://schema.org/' . self::getParent() . '">';
 			}
-
 			if (get_option('rsmt_type')) {
 				$rsmt_info .= '<span itemprop="additionalType"  itemscope itemtype="http://schema.org/' . get_option('rsmt_type') . '">';
 			}
 
 			/* name of business and url */
 			if (get_option('rsmt_name')) {
-
 				if (get_option('rsmt_url')) {
 					$rsmt_info .= '<a itemprop="url" href="' . get_option('rsmt_url') . '" class="visuallyhidden"><span itemprop="name">' . get_option('rsmt_name') . '</span></a>';
 				} else {
@@ -215,8 +194,8 @@ if (!class_exists('LocalBusiness')) {
 			}
                         /* rating of business*/
 			$rsmt_info .= self::aggregateRating();
-                        
-			$rsmt_info .= '<span itemprop="hasPOS location" itemscope itemtype="http://schema.org/Place">';
+
+			$rsmt_info .= '<span itemprop="hasPOS" itemscope itemtype="http://schema.org/Place">';
 			/* physical address */
 			$rsmt_info .= self::PostalAddressOne();
 			if (get_option('rsmt_geo_location_one')) {
@@ -224,9 +203,9 @@ if (!class_exists('LocalBusiness')) {
 			}
 
 			$rsmt_info .= '</span>';
-			
+
 			if (get_option('rsmt_street_address_two')){
-                            $rsmt_info .= '<span itemprop="hasPOS location" itemscope itemtype="http://schema.org/Place">';
+                            $rsmt_info .= '<span itemprop="hasPOS" itemscope itemtype="http://schema.org/Place">';
                             $rsmt_info .= self::PostalAddressTwo();
                             /* geo location */
                             if (get_option('rsmt_geo_location_two')) {
@@ -269,7 +248,7 @@ if (!class_exists('LocalBusiness')) {
 				$rsmt_info .= self::getReviews();
 			}
 
-			/* member of Microdata Project */
+			/* member of Repair Shop Marketing Tools */
 			if ((get_option('rsmt_member')) || ((get_option('rsmt_member_url')) && (get_option('rsmt_member_name')))) {
 				$rsmt_info .= self::member();
 			}
@@ -286,28 +265,28 @@ if (!class_exists('LocalBusiness')) {
 			if (get_option('rsmt_type')) {
 				$rsmt_info .= '</span>';
 			}
-
 			$rsmt_info .= '</span>';
-
 			$rsmt_info .= '<!--end RSMT Schema plugin-->';
 
-
 			echo str_replace(array("\r","\n"),"", str_replace(" ", " ", $rsmt_info));
-
 		}
+/*
+		private static function rsmt_create_location_fields(){
+			$locations = get_option('rsmt_locations');
+			for (i = 0; i < $locations; i++){
 
+			}
+		}
+		*/
 		/** function/postalAddress
 		 * Usage: create postal address schema
 		 * Arg(0): null
 		 * Return: postal address schema
 		 */
 		private static function PostalAddressOne(){
-
 			$error = 0;
 			$rsmt_info = "";
-
 			$rsmt_info .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
-
 			/* street address */
 			if (get_option('rsmt_street_address_one')) {
 				$rsmt_info .= '<meta itemprop="streetAddress" content="' . get_option('rsmt_street_address_one') . '" />';
@@ -689,9 +668,8 @@ if (!class_exists('LocalBusiness')) {
 
 		}
 
-		public static function getReviews()
-		{
-
+/*
+		public static function getReviews(){
 			global $wpdb;
 
 			$pid = get_the_ID();
@@ -767,7 +745,7 @@ if (!class_exists('LocalBusiness')) {
 
 		}
 
-
+*/
 		public static function visuallyHidden() {
 
 			$style = '<style> .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }</style>';
@@ -779,7 +757,7 @@ if (!class_exists('LocalBusiness')) {
 			$address = get_option('rsmt_street_address_one') . ',
 			' . get_option('rsmt_address_locality_one') . ', ' . get_option('rsmt_address_region_one') . ' ' . get_option('rsmt_postal_code_one');
 
-			// fetching lat&amp;lng from Google Maps
+			// fetching lat and lng from Google Maps
 			$request_uri = 'http://maps.googleapis.com/maps/api/geocode/xml?address=' . urlencode($address)
 				. '&sensor=true';
 			$google_xml = simplexml_load_file($request_uri);
