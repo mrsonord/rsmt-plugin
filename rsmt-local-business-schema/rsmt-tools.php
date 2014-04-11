@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: RSMT Schema
+* Plugin Name: RSMT Tools
 * Description: Local business Schema Creator
 * Version: 0.2
 * Plugin URI: http://repairshopmarketingtools.com

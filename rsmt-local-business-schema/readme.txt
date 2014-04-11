@@ -2,8 +2,8 @@
 Author: Samuel Nord
 Tags: microdata, seo, local business, schema.org, schema, rich snippets
 Requires at least: 3.0
-Tested up to: 3.8.1
-Stable tag: 0.2.2
+Tested up to: 3.8.2
+Stable tag: 0.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
