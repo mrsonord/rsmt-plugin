@@ -1,4 +1,4 @@
-=== RSMT Local Business Schema ===
+=== RSMT Tools ===
 Author: Samuel Nord
 Tags: microdata, seo, local business, schema.org, schema, rich snippets
 Requires at least: 3.0
@@ -7,7 +7,7 @@ Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Local Business Schema plugin adds schema microdata to a site
+RSMT Tools adds local business schema microdata to a site
 
 
 == Description ==
@@ -23,6 +23,9 @@ Employees and Founders can be added to the microdata by group. Users name, profi
 
 
 == Changelog ==
+= Version 0.2.3
+    Folder Restructure
+    Abstracted out options pages
 = Version 0.2.2
     Bugfix: Options Were Not Saving Properly
 = Version 0.2.1

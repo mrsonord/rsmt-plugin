@@ -11,15 +11,16 @@ if (!class_exists('LocalBusiness')) {
 			$this->name = 'rsmtLocalBusiness';
 		}
 
-		/** function/getParent
+		/**
+		 * function/getParent
 		 * Usage: create tables if not exist and activates the plugin
 		 * Arg(0): null
 		 * Return: if found return parent type of business
 		 */
-		public static function getParent() {
+		static function getParent() {
 			$parent = get_option('rsmt_type');
 			$array = array(
-				'AutoBodyShop:AutomotiveBusiness' ,
+				'AutoBody Shop:AutomotiveBusiness' ,
 				'AutoDealer:AutomotiveBusiness' ,
 				'AutoPartsStore:AutomotiveBusiness' ,
 				'AutoRental:AutomotiveBusiness' ,
@@ -129,7 +130,6 @@ if (!class_exists('LocalBusiness')) {
 				'ToyStore:Store' ,
 				'WholesaleStore:Store'
 			);
-
 			foreach ($array as $var) {
 				$val = explode(':' , $var);
 				switch ($val[0]) {
@@ -145,12 +145,13 @@ if (!class_exists('LocalBusiness')) {
 			}
 		}
 
-		/** function/localBusiness
+		/**
+		 * function/localBusiness
 		 * Usage: creates localBusiness schema and outputs information
 		 * Arg(0): null
 		 * Return: void
 		 */
-		public static function showLocalBusiness() {
+		static function showLocalBusiness() {
 			$rsmt_info = '<!--begin rsmt schema plugin -->';
 			$rsmt_info .= '<span itemscope itemtype="http://schema.org/LocalBusiness">';
 			if (self::getParent()) {
@@ -195,7 +196,7 @@ if (!class_exists('LocalBusiness')) {
                         /* rating of business*/
 			$rsmt_info .= self::aggregateRating();
 
-			$rsmt_info .= '<span itemprop="hasPOS" itemscope itemtype="http://schema.org/Place">';
+			$rsmt_info .= '<span itemprop="hasPOS location" itemscope itemtype="http://schema.org/Place">';
 			/* physical address */
 			$rsmt_info .= self::PostalAddressOne();
 			if (get_option('rsmt_geo_location_one')) {
@@ -205,7 +206,7 @@ if (!class_exists('LocalBusiness')) {
 			$rsmt_info .= '</span>';
 
 			if (get_option('rsmt_street_address_two')){
-                            $rsmt_info .= '<span itemprop="hasPOS" itemscope itemtype="http://schema.org/Place">';
+                            $rsmt_info .= '<span itemprop="hasPOS location" itemscope itemtype="http://schema.org/Place">';
                             $rsmt_info .= self::PostalAddressTwo();
                             /* geo location */
                             if (get_option('rsmt_geo_location_two')) {
@@ -270,20 +271,18 @@ if (!class_exists('LocalBusiness')) {
 
 			echo str_replace(array("\r","\n"),"", str_replace(" ", " ", $rsmt_info));
 		}
-/*
-		private static function rsmt_create_location_fields(){
-			$locations = get_option('rsmt_locations');
-			for (i = 0; i < $locations; i++){
 
+		static function rsmt_create_location_fields(){
+			$locations = get_option('rsmt_locations');
+			for ( $i = 0; $i < $locations; $i++){
 			}
 		}
-		*/
 		/** function/postalAddress
 		 * Usage: create postal address schema
 		 * Arg(0): null
 		 * Return: postal address schema
 		 */
-		private static function PostalAddressOne(){
+		static function PostalAddressOne(){
 			$error = 0;
 			$rsmt_info = "";
 			$rsmt_info .= '<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
@@ -339,7 +338,7 @@ if (!class_exists('LocalBusiness')) {
 			}
 
 		}
-		private static function PostalAddressTwo(){
+		static function PostalAddressTwo(){
 
 			$error = 0;
 			$rsmt_info = "";
@@ -405,7 +404,7 @@ if (!class_exists('LocalBusiness')) {
 		 * Arg(0): null
 		 * Return: aggregate rating schema
 		 */
-		private static function aggregateRating(){
+		static function aggregateRating(){
 
 			$error = 0;
 			$rsmt_info = "";
@@ -447,81 +446,13 @@ if (!class_exists('LocalBusiness')) {
 
 		}
 
-		/** function/seeks
-		 * Usage: creates seeks for schema
-		 * Arg(0): null
-		 * Return: seeks schema
-		 */
-		private static function seeks(){
-
-			$rsmt_info = "";
-
-			if (get_option('rsmt_seeks')) {
-
-				$rsmt_info .= '<span itemprop="seeks" itemscope itemtype="http://schema.org/Demand">';
-
-				$rsmt_info .= '<a itemprop="url" href="http://sidcreations.com" class="visuallyhidden"><span itemprop="name">Seo</span></a>';
-
-				$rsmt_info .= '<meta itemprop="description" content="Sid Creations an seo, website design and website hosting company develops the latest html5, seo and mobile technology websites." />';
-
-				$rsmt_info .= '</span>';
-			} else {
-				$rsmt_info .= '<span itemprop="seeks" itemscope itemtype="http://schema.org/Demand">';
-
-				$rsmt_info .= '<a itemprop="url" href="' . get_option('rsmt_seeks_url') . '" class="visuallyhidden"><span itemprop="name">' . get_option('rsmt_seeks_name') . '</span></a>';
-
-				$rsmt_info .= '<meta itemprop="description" content="' . get_option('rsmt_seeks_description') . '" />';
-
-				$rsmt_info .= '</span>';
-			}
-
-			return $rsmt_info;
-
-		}
-
-		/** function/member
-		 * Usage: creates member for schema
-		 * Arg(0): null
-		 * Return: member schema
-		 */
-		private static function member(){
-
-			$rsmt_info = "";
-
-			if (get_option('rsmt_member')) {
-
-				$rsmt_info .= '<span itemprop="member" itemscope itemtype="http://schema.org/Organization">';
-
-				$rsmt_info .= '<a itemprop="url" href="http://microdataproject.org" class="visuallyhidden"><span itemprop="name">Local Business Seo</span></a>';
-
-				$rsmt_info .= '<meta itemprop="description" content="' . get_bloginfo("name") . ' is a member of the Microdata Project. The Microdata Project offers microdata, seo, and various plugins for WordPress websites." />';
-
-				$rsmt_info .= '</span>';
-
-
-			} else {
-
-				$rsmt_info .= '<span itemprop="member" itemscope itemtype="http://schema.org/Organization">';
-
-				$rsmt_info .= '<a itemprop="url" href="' . get_option('rsmt_member_url') . '" class="visuallyhidden"><span itemprop="name">' . get_option('rsmt_member_name') . '</span></a>';
-
-				$rsmt_info .= '<meta itemprop="description" content="' . get_option('rsmt_member_description') . '" />';
-
-				$rsmt_info .= '</span>';
-
-			}
-
-
-			return $rsmt_info;
-		}
-
-		/** function/geoLocation
+		/**
+		 * function/geoLocation
 		 * Usage: creates geo location for schema
 		 * Arg(0): null
 		 * Return: geo location schema
 		 */
-		private static function geoLocationOne() {
-
+		static function geoLocationOne() {
 			if ((!get_option('rsmt_latitude_one')) || (!get_option('rsmt_longitude_one'))
 				|| (preg_match
 				(
@@ -547,8 +478,7 @@ if (!class_exists('LocalBusiness')) {
 			return $rsmt_info;
 
 		}
-		private static function geoLocationTwo() {
-
+		static function geoLocationTwo() {
 			if ((!get_option('rsmt_latitude_two')) || (!get_option('rsmt_longitude_two'))
 				|| (preg_match
 				(
@@ -560,116 +490,78 @@ if (!class_exists('LocalBusiness')) {
 			) {
 				self::getGeoLocationTwo();
 			}
-
 			$rsmt_info = "";
-
 			$rsmt_info .= '<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">';
-
 			$rsmt_info .= '<meta itemprop="latitude" content="' . get_option('rsmt_latitude_two') . '" />';
-
 			$rsmt_info .= '<meta itemprop="longitude" content="' . get_option('rsmt_longitude_two') . '" />';
-
 			$rsmt_info .= '</span>';
-
 			return $rsmt_info;
-
 		}
-		/** function/getEmployee
+
+		/**
+		 * function/getEmployee
 		 * Usage: creates employees for schema
 		 * Arg(0): null
 		 * Return: employees schema
 		 */
-		private static function getEmployee() {
-
+		static function getEmployee() {
 			$rsmt_info = "";
-
 			$employees = get_users('role=' . get_option('rsmt_employee_role') . '&all_user_meta');
-
 			$rsmt_info .= '<span itemprop="employees" itemscope itemtype="http://schema.org/employees">';
-
 			foreach ($employees as $employee) {
-
 				if ($employee->display_name) {
-
 					$employee_name = $employee->display_name;
-
 				} else {
-
 					$employee_name = $employee->user_nicename;
 				}
-
 				$rsmt_info .= '<span itemprop="employee" itemscope itemtype="http://schema.org/Person">';
-
-
 				$rsmt_info .= '<a itemprop="url" href="http://microdataproject.org/author/' . $employee->user_login . '/" class="visuallyhidden"><span itemprop="name">' . $employee_name . '</span></a>';
-
 				/* email */
 				if ($employee->user_email) {
 					$rsmt_info .= '<meta itemprop="email" content="' . $employee->user_email . '" />';
 				}
-
 				if ($employee->description) {
 					$rsmt_info .= '<meta itemprop="description" content="' . $employee->description . '" />';
 				}
-
 				$rsmt_info .= '</span>';
 			}
-
 			$rsmt_info .= '</span>';
-
 			return $rsmt_info;
-
 		}
 
-		/** function/getFounder
+		/**
+		 * function/getFounder
 		 * Usage: creates founders for schema
 		 * Arg(0): null
 		 * Return: founders schema
 		 */
-		private static function getFounder() {
-
+		static function getFounder() {
 			$rsmt_info = "";
-
 			$founders = get_users('role=' . get_option('rsmt_founder_role') . '&all_user_meta');
-
 			$rsmt_info .= '<span itemprop="founders" itemscope itemtype="http://schema.org/founders">';
-
 			foreach ($founders as $founder) {
-
 				if ($founder->display_name) {
-
 					$founder_name = $founder->display_name;
-
 				} else {
-
 					$founder_name = $founder->user_nicename;
 				}
-
 				$rsmt_info .= '<span itemprop="founder"  itemscope itemtype="http://schema.org/Person">';
-
-
 				$rsmt_info .= '<a itemprop="url" href="http://microdataproject.org/author/' . $founder->user_login . '/" class="visuallyhidden"><span itemprop="name">' . $founder_name . '</span></a>';
-
 				/* email */
 				if ($founder->user_email) {
 					$rsmt_info .= '<meta itemprop="email" content="' . $founder->user_email . '" />';
 				}
-
 				if ($founder->description) {
 					$rsmt_info .= '<meta itemprop="description" content="' . $founder->description . '" />';
 				}
-
 				$rsmt_info .= '</span>';
 			}
-
 			$rsmt_info .= '</span>';
-
 			return $rsmt_info;
-
 		}
 
 /*
-		public static function getReviews(){
+		static function getReviews(){
 			global $wpdb;
 
 			$pid = get_the_ID();
@@ -680,8 +572,8 @@ if (!class_exists('LocalBusiness')) {
 
 			if (!$row) {
 
-				$rsmtschema = new rsmtschema();
-				$rsmtschema->genReveiw($pid);
+				$RSMT_Tools = new RSMT_Tools();
+				$RSMT_Tools->genReveiw($pid);
 
 			}
 
@@ -746,17 +638,14 @@ if (!class_exists('LocalBusiness')) {
 		}
 
 */
-		public static function visuallyHidden() {
-
+		static function visuallyHidden() {
 			$style = '<style> .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }</style>';
-
 			return print($style);
 		}
 
-		public static function getGeoLocationOne(){
+		static function getGeoLocationOne(){
 			$address = get_option('rsmt_street_address_one') . ',
 			' . get_option('rsmt_address_locality_one') . ', ' . get_option('rsmt_address_region_one') . ' ' . get_option('rsmt_postal_code_one');
-
 			// fetching lat and lng from Google Maps
 			$request_uri = 'http://maps.googleapis.com/maps/api/geocode/xml?address=' . urlencode($address)
 				. '&sensor=true';
@@ -767,13 +656,11 @@ if (!class_exists('LocalBusiness')) {
 
 			update_option('rsmt_latitude_one' , $lat);
 			update_option('rsmt_longitude_one' , $lng);
-
 		}
 
-		public static function getGeoLocationTwo(){
+		static function getGeoLocationTwo(){
 			$address = get_option('rsmt_street_address_two') . ',
 			' . get_option('rsmt_address_locality_two') . ', ' . get_option('rsmt_address_region_two') . ' ' . get_option('rsmt_postal_code_two');
-
 			// fetching lat&amp;lng from Google Maps
 			$request_uri = 'http://maps.googleapis.com/maps/api/geocode/xml?address=' . urlencode($address)
 				. '&sensor=true';
