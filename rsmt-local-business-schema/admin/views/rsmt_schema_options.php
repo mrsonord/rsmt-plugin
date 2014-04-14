@@ -3,7 +3,7 @@ $plugin_id = 'RSMT_TOOLS_ID';
 ?>
 <div class="wrap">
  <div class="left_block">
-<h2>Local Business Schema<a class="floatright" href="http://repairshopmarketingtools.com" title="Repair Shop Marketing Tools"><img src="<?php echo $rsmtPath; ?>views/img/logo.png" alt="Repair Shop Marketing Tools Logo" width="300" height="100"></a></h2>
+<h2>Local Business Schema<a class="floatright" href="http://repairshopmarketingtools.com" title="Repair Shop Marketing Tools"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>img/logo.png" alt="Repair Shop Marketing Tools Logo" width="300" height="100"></a></h2>
 <h3><a href="http://www.google.com/webmasters/tools/richsnippets?q=<?php echo trailingslashit(get_bloginfo( "wpurl" ) ); ?>" target="_blank">Preview your microdata</a></h3>
 <form action="options.php" method="post" class="rsmt_form">
 <?php settings_fields ($plugin_id . "_options"); ?>
@@ -11,21 +11,6 @@ $plugin_id = 'RSMT_TOOLS_ID';
 <tr style="background:#eeeeee;">
   <td></td>
   <td><h3>Business Information</h3></td>
-</tr>
-<tr>
-   <td class="left">Status:</td>
-   <td><select name="rsmt_status">
-           <?php if (get_option("rsmt_status" ) == "1") { ?>
-               <option value="1">Enabled</option>
-               <option value="0">Disabled</option>
-           <?php
-           } else {
-               ?>
-               <option value="0">Disabled</option>
-               <option value="1">Enabled</option>
-           <?php } ?>
-       </select></td>
-   <td></td>
 </tr>
 <tr>
    <td class="left">Business Type:</td>
